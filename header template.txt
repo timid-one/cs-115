@@ -1,0 +1,9 @@
+'''
+Created on 2018-09-26
+@author:   Andrew Chinique @achiniqu
+Pledge:    I pledge my honor that I have abided by the Stevens Honor System.
+                                                        -- Andrew Chinique
+
+CS115 - Hw 3
+'''
+from cs115 import *
