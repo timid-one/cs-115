@@ -117,16 +117,18 @@ fibonacci = '''
 1       setn    r13 0           # initialize r13 as 0
 2       setn    r14 0           # initialize r14 as 1
 3       setn    r15 1           # initialize r15 as 0
-4       write   r14             # prints r14
-5       addn    r1 -1           # subtracts 1 from r1
-6       jeqzn   r1 13           # stops if r1 is 0
-7       write   r15             # prints r15
-8       copy    r13 r14         # sets r13 = r14
-9       copy    r14 r15         # sets r14 = r15
-10      add     r15 r14 r13     # sets r15 = r14 + r15
-11      addn    r1 -1           # subtracts 1 from r1
-12      jumpn   6               # repeat until r1 = 0
-13      halt
+4       jeqz    r1 14           # stops if r1 is 0
+5       write   r14             # prints r14
+6       addn    r1 -1           # subtracts 1 from r1
+7       jeqzn   r1 14
+# stops if r1 is 0
+8       write   r15             # prints r15
+9       copy    r13 r14         # sets r13 = r14
+10      copy    r14 r15        # sets r14 = r15
+11      add     r15 r14 r13     # sets r15 = r14 + r15
+12      addn    r1 -1           # subtracts 1 from r1
+13      jumpn   7               # repeat until r1 = 0
+14      halt
 '''
 
 
@@ -135,9 +137,9 @@ fibonacci = '''
 RunThis = fibonacci
 
 # Choose whether to use debug mode; uncomment one of the following lines.
-# Mode = ['-n'] # not debug mode, 
-Mode = ['-d'] # debug mode
-#Mode = []     # prompt for whether to enter debug mode
+Mode = ['-n'] # not debug mode, 
+# Mode = ['-d'] # debug mode
+# Mode = []     # prompt for whether to enter debug mode
 
 
 # When you press F5 in IDLE, the following code will
