@@ -51,8 +51,8 @@ def add(S,T):
     '''Returns the sum of two binary strings as a binary string.
     input S: a string consisting of ones and zeros
     input T: a string consisting of ones and zeros'''
-    SinDec = baseBToNum(S, 10)
-    TinDec = baseBToNum(T, 10)
+    SinDec = baseBToNum(S, 2)
+    TinDec = baseBToNum(T, 2)
     sumInDec = SinDec + TinDec
     return numToBaseB(sumInDec, 2)
 
@@ -82,6 +82,7 @@ def addB(S,T):
             if C == '1':
                 return '1'
             return ''
-        return addBwithCarry(S[:-1], T[:-1], FullAdder[(S[-1], T[-1], C)][1]) + \
+        answer = addBwithCarry(S[:-1], T[:-1], FullAdder[(S[-1], T[-1], C)][1]) + \
         FullAdder[(S[-1], T[-1], C)][0]
+        return str(int(answer))
     return addBwithCarry(S,T,'0')
